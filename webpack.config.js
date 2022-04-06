@@ -4,13 +4,17 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const getFileLoaderOptions = () => ({
-  name: `[name].[ext]`,
-  path: path.resolve(__dirname, 'public'),
+  name: `[path][name].[ext]`,
+  path: path.resolve(__dirname, 'dist'),
 });
 
 module.exports = {
   entry: './src/index.tsx',
-  output: {path: path.resolve(__dirname, 'public'), filename: 'bundle.js'},
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    assetModuleFilename: '[path][hash][ext][query]',
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
@@ -19,7 +23,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, 'dist'),
     },
     compress: true,
     open: false,

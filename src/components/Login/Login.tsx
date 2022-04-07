@@ -15,7 +15,7 @@ export const Login = () => {
             Get Premier Access to Raya and the Last Dragon for an additional fee
             with a Disney+ subscription. As of the bloody date of 24/02/2022,
             the price of Disney+ and The Disney Bundle will increase by $1.
-            Glory to Ukraine. Freedom to Russian people.
+            Peace to Ukraine. Freedom to Russian people.
           </Description>
           <CTALogoTwo src={ctaLogoTwo} alt="" />
         </CTA>

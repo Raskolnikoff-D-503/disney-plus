@@ -7,7 +7,7 @@ export const NavMenu = () => {
     <NavMenuList>
       {navMenuInfo.map((item) => {
         return (
-          <a href={item.path}>
+          <a key={item.title} href={item.path}>
             <img src={item.icon} alt={item.alt} />
             <span>{item.title}</span>
           </a>

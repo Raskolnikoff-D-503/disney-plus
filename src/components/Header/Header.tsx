@@ -1,16 +1,36 @@
 import React from 'react';
+// import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
+import {Nullable} from '@/types';
 import {NavMenu} from '@/components';
 import logo from '@/assets/logo.svg';
 
-export const Header = () => {
+type HeaderProps = {
+  userName: Nullable<string>;
+  // userEmail: Nullable<string>;
+  userPhoto: string;
+  handleAuth: () => void;
+};
+
+export const Header = ({
+  userName,
+  // userEmail,
+  userPhoto,
+  handleAuth,
+}: HeaderProps) => {
   return (
     <Nav>
       <Logo>
         <img src={logo} alt="Disney" />
       </Logo>
-      <NavMenu />
-      <LoginButton>Login</LoginButton>
+      {userName ? (
+        <>
+          <NavMenu />
+          <UserImg src={userPhoto} alt={userName} />
+        </>
+      ) : (
+        <LoginButton onClick={handleAuth}>Login</LoginButton>
+      )}
     </Nav>
   );
 };
@@ -58,4 +78,8 @@ const LoginButton = styled.a`
     color: #000;
     border-color: transparent;
   }
+`;
+
+const UserImg = styled.img`
+  height: 100%;
 `;

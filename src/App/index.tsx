@@ -1,12 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import {Header, Login} from '@/components';
+import {HeaderController, Login} from '@/components';
 
 const App = () => {
   return (
     <div className="App">
       <Router>
-        <Header />
+        <HeaderController />
         <Routes>
           <Route path="/" element={<Login />} />
         </Routes>

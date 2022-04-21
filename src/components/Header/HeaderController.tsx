@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-// import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {auth} from '@/firebase';
 import {AppDispatch} from '@/store/store';
+import {userLoginActions} from '@/store/userLogin/userLogin.reducer';
 import {setUserLoginDetails} from '@/store/userLogin/userLogin.actions';
 import {
   selectUserName,
@@ -12,7 +14,7 @@ import {Header} from './Header';
 
 export const HeaderController = () => {
   const dispatch = useDispatch<AppDispatch>();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //Selectors
   const userName = useSelector(selectUserName);
@@ -21,8 +23,37 @@ export const HeaderController = () => {
 
   //Handlers
   const authorizationHandler = () => {
-    dispatch(setUserLoginDetails());
+    if (!userName) {
+      dispatch(setUserLoginDetails());
+    } else if (userName) {
+      auth
+        .signOut()
+        .then(() => {
+          dispatch(userLoginActions.setSignOutState());
+          navigate('/', {replace: true});
+        })
+        .catch((err) => alert(err.message));
+    }
   };
+
+  //Effects
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        dispatch(
+          userLoginActions.setUserLoginDetails({
+            name: user.displayName,
+            email: user.email,
+            photo: user.photoURL,
+          }),
+        );
+        navigate('/home', {replace: true});
+      }
+      if (!user) {
+        navigate('/', {replace: true});
+      }
+    });
+  }, [userName]);
 
   return (
     <Header

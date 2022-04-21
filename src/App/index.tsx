@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import {HeaderController, Login} from '@/components';
+import {HeaderController, Login, Home} from '@/components';
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
         <HeaderController />
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
     </div>

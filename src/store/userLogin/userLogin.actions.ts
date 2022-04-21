@@ -23,4 +23,17 @@ export const setUserLoginDetails = () => {
   };
 };
 
-export const setSignOutState = () => {};
+/**
+ * Экшн для выхода пользователя из своего аккаунта
+ * @returns
+ */
+export const setSignOutState = () => {
+  return (dispatch: AppDispatch) => {
+    return auth
+      .signOut()
+      .then(() => {
+        dispatch(userLoginActions.setSignOutState());
+      })
+      .catch((err) => alert(err.message));
+  };
+};

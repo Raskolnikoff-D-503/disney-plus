@@ -4,7 +4,10 @@ import {useNavigate} from 'react-router-dom';
 import {auth} from '@/firebase';
 import {AppDispatch} from '@/store/store';
 import {userLoginActions} from '@/store/userLogin/userLogin.reducer';
-import {setUserLoginDetails} from '@/store/userLogin/userLogin.actions';
+import {
+  setSignOutState,
+  setUserLoginDetails,
+} from '@/store/userLogin/userLogin.actions';
 import {
   selectUserName,
   //   selectUserEmail,
@@ -22,18 +25,13 @@ export const HeaderController = () => {
   const userPhoto = useSelector(selectUserPhoto);
 
   //Handlers
-  const authorizationHandler = () => {
-    if (!userName) {
-      dispatch(setUserLoginDetails());
-    } else if (userName) {
-      auth
-        .signOut()
-        .then(() => {
-          dispatch(userLoginActions.setSignOutState());
-          navigate('/', {replace: true});
-        })
-        .catch((err) => alert(err.message));
-    }
+  const signInHandler = () => {
+    dispatch(setUserLoginDetails());
+  };
+
+  const signOutHandler = () => {
+    dispatch(setSignOutState());
+    navigate('/', {replace: true});
   };
 
   //Effects
@@ -60,7 +58,8 @@ export const HeaderController = () => {
       userName={userName}
       //   userEmail={userEmail}
       userPhoto={userPhoto}
-      handleAuth={authorizationHandler}
+      handleAuth={signInHandler}
+      handleSignOut={signOutHandler}
     />
   );
 };

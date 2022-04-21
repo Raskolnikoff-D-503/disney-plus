@@ -10,6 +10,7 @@ type HeaderProps = {
   // userEmail: Nullable<string>;
   userPhoto: string;
   handleAuth: () => void;
+  handleSignOut: () => void;
 };
 
 export const Header = ({
@@ -17,6 +18,7 @@ export const Header = ({
   // userEmail,
   userPhoto,
   handleAuth,
+  handleSignOut,
 }: HeaderProps) => {
   return (
     <Nav>
@@ -29,7 +31,7 @@ export const Header = ({
           <SignOut>
             <UserImg src={userPhoto} alt={userName} />
             <DropDown>
-              <span onClick={handleAuth}>Sign out</span>
+              <span onClick={handleSignOut}>Sign out</span>
             </DropDown>
           </SignOut>
         </>

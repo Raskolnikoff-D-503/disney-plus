@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Nullable} from '@/types';
 import {NavMenu} from '@/components';
-import logo from '@/assets/logo.svg';
+import IMAGES from '@/assets';
 
 type HeaderProps = {
   userName: Nullable<string>;
@@ -23,7 +23,7 @@ export const Header = ({
   return (
     <Nav>
       <Logo>
-        <img src={logo} alt="Disney" />
+        <img src={IMAGES.logo} alt="Disney" />
       </Logo>
       {userName ? (
         <>

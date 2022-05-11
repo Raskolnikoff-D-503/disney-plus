@@ -1,44 +1,39 @@
-import homeIcon from '@/assets/home-icon.svg';
-import searchIcon from '@/assets/search-icon.svg';
-import watchlistIcon from '@/assets/watchlist-icon.svg';
-import originalIcon from '@/assets/original-icon.svg';
-import movieIcon from '@/assets/movie-icon.svg';
-import seriesIcon from '@/assets/series-icon.svg';
+import IMAGES from '@/assets';
 
 export const navMenuInfo = [
   {
     path: '/home',
-    icon: homeIcon,
+    icon: IMAGES.homeIcon,
     alt: 'HOME',
     title: 'HOME',
   },
   {
     path: '/',
-    icon: searchIcon,
+    icon: IMAGES.searchIcon,
     alt: 'SEARCH',
     title: 'SEARCH',
   },
   {
     path: '/',
-    icon: watchlistIcon,
+    icon: IMAGES.watchlistIcon,
     alt: 'WATCHLIST',
     title: 'WATCHLIST',
   },
   {
     path: '/',
-    icon: originalIcon,
+    icon: IMAGES.originalIcon,
     alt: 'ORIGINALS',
     title: 'ORIGINALS',
   },
   {
     path: '/',
-    icon: movieIcon,
+    icon: IMAGES.movieIcon,
     alt: 'MOVIES',
     title: 'MOVIES',
   },
   {
     path: '/',
-    icon: seriesIcon,
+    icon: IMAGES.seriesIcon,
     alt: 'SERIES',
     title: 'SERIES',
   },

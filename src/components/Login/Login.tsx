@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import loginBackground from '@/assets/login-background.jpg';
-import ctaLogoOne from '@/assets/cta-logo-one.svg';
-import ctaLogoTwo from '@/assets/cta-logo-two.png';
+import IMAGES from '@/assets';
 
 export const Login = () => {
   return (
     <Container>
       <Content>
         <CTA>
-          <CTALogoOne src={ctaLogoOne} alt="" />
+          <CTALogoOne src={IMAGES.ctaLogoOne} alt="" />
           <SignUp>GET ALL THERE</SignUp>
           <Description>
             Get Premier Access to Raya and the Last Dragon for an additional fee
@@ -17,7 +15,7 @@ export const Login = () => {
             the price of Disney+ and The Disney Bundle will increase by $1.
             Should this information come from database?
           </Description>
-          <CTALogoTwo src={ctaLogoTwo} alt="" />
+          <CTALogoTwo src={IMAGES.ctaLogoTwo} alt="" />
         </CTA>
         <BgImage />
       </Content>
@@ -52,7 +50,7 @@ const BgImage = styled.div`
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(${loginBackground});
+  background-image: url(${IMAGES.loginBackground});
   position: absolute;
   top: 0;
   right: 0;

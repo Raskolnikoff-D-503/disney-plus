@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {navMenuInfo} from './navMenuInfo';
+import {navMenuInfo} from './navMenuInfo.map';
 
 export const NavMenu = () => {
   return (

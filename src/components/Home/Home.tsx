@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import {ImgSlider} from '@/components';
 import IMAGES from '@/assets';
 
 export const Home = () => {
   return (
     <Container>
-      <h2>HELLO</h2>
-      <h2>HELLO</h2>
+      <ImgSlider />
     </Container>
   );
 };

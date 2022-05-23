@@ -61,6 +61,10 @@ module.exports = {
           options: getFileLoaderOptions(),
         },
       },
+      {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
+      },
     ],
   },
   plugins: [

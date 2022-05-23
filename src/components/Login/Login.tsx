@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import IMAGES from '@/assets';
+import {IMAGES} from '@/assets';
 
 export const Login = () => {
   return (
     <Container>
       <Content>
         <CTA>
-          <CTALogoOne src={IMAGES.ctaLogoOne} alt="" />
+          <CTALogoOne src={IMAGES.CTA_LOGO_ONE_URL} alt="" />
           <SignUp>GET ALL THERE</SignUp>
           <Description>
             Get Premier Access to Raya and the Last Dragon for an additional fee
@@ -15,7 +15,7 @@ export const Login = () => {
             the price of Disney+ and The Disney Bundle will increase by $1.
             Should this information come from database?
           </Description>
-          <CTALogoTwo src={IMAGES.ctaLogoTwo} alt="" />
+          <CTALogoTwo src={IMAGES.CTA_LOGO_TWO_URL} alt="" />
         </CTA>
         <BgImage />
       </Content>
@@ -50,7 +50,7 @@ const BgImage = styled.div`
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(${IMAGES.loginBackground});
+  background-image: url(${IMAGES.LOGIN_BACKGROUND_URL});
   position: absolute;
   top: 0;
   right: 0;

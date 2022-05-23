@@ -1,13 +1,11 @@
 import React from 'react';
-// import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import {Nullable} from '@/types';
 import {NavMenu} from '@/components';
-import IMAGES from '@/assets';
+import {IMAGES} from '@/assets';
 
 type HeaderProps = {
   userName: Nullable<string>;
-  // userEmail: Nullable<string>;
   userPhoto: string;
   handleAuth: () => void;
   handleSignOut: () => void;
@@ -15,7 +13,6 @@ type HeaderProps = {
 
 export const Header = ({
   userName,
-  // userEmail,
   userPhoto,
   handleAuth,
   handleSignOut,
@@ -23,7 +20,7 @@ export const Header = ({
   return (
     <Nav>
       <Logo>
-        <img src={IMAGES.logo} alt="Disney" />
+        <img src={IMAGES.LOGO_URL} alt="Disney" />
       </Logo>
       {userName ? (
         <>

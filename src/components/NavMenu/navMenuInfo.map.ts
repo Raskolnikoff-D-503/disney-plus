@@ -1,39 +1,39 @@
-import IMAGES from '@/assets';
+import {IMAGES} from '@/assets';
 
 export const navMenuInfo = [
   {
     path: '/home',
-    icon: IMAGES.homeIcon,
+    imgUrl: IMAGES.HOME_ICON_URL,
     alt: 'HOME',
     title: 'HOME',
   },
   {
     path: '/',
-    icon: IMAGES.searchIcon,
+    imgUrl: IMAGES.SEARCH_ICON_URL,
     alt: 'SEARCH',
     title: 'SEARCH',
   },
   {
     path: '/',
-    icon: IMAGES.watchlistIcon,
+    imgUrl: IMAGES.WATCHLIST_ICON_URL,
     alt: 'WATCHLIST',
     title: 'WATCHLIST',
   },
   {
     path: '/',
-    icon: IMAGES.originalIcon,
+    imgUrl: IMAGES.ORIGINAL_ICON_URL,
     alt: 'ORIGINALS',
     title: 'ORIGINALS',
   },
   {
     path: '/',
-    icon: IMAGES.movieIcon,
+    imgUrl: IMAGES.MOVIE_ICON_URL,
     alt: 'MOVIES',
     title: 'MOVIES',
   },
   {
     path: '/',
-    icon: IMAGES.seriesIcon,
+    imgUrl: IMAGES.SERIES_ICON_URL,
     alt: 'SERIES',
     title: 'SERIES',
   },

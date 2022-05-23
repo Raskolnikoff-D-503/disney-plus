@@ -1,26 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import IMAGES from '@/assets';
+import {viewersInfo} from './viewersInfo.map';
 
 export const Viewers = () => {
   return (
     <Container>
-      <Wrap>
-        <img src={IMAGES.viewersDisney} alt="" />
-      </Wrap>
-      <Wrap>
-        <img src={IMAGES.viewersMarvel} alt="" />
-      </Wrap>
-      <Wrap>
-        <img src={IMAGES.viewersNational} alt="" />
-      </Wrap>
-      <Wrap>
-        <img src={IMAGES.viewersPixar} alt="" />
-      </Wrap>
-      <Wrap>
-        <img src={IMAGES.viewersStarwars} alt="" />
-      </Wrap>
+      {viewersInfo.map((item) => (
+        <Wrap>
+          <img src={item.imgUrl} alt="" />
+          <video autoPlay={true} loop={true} playsInline={true}>
+            <source src={item.videoUrl} type="video/mp4" />
+          </video>
+        </Wrap>
+      ))}
     </Container>
   );
 };
@@ -58,5 +50,26 @@ const Wrap = styled.div`
     transition: opacity 500ms ease-in-out 0s;
     width: 100%;
     z-index: 1;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    z-index: 0;
+  }
+
+  &:hover {
+    box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
+      rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+
+    transform: scale(1.05);
+    border-color: rgba(249, 249, 249, 0.8);
+
+    video {
+      opacity: 1;
+    }
   }
 `;

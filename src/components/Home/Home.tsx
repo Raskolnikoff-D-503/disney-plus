@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {ImgSlider, Viewers} from '@/components';
 
-import IMAGES from '@/assets';
+import {IMAGES} from '@/assets';
 
 export const Home = () => {
   return (
@@ -22,8 +22,8 @@ const Container = styled.main`
   padding: 0 calc(3.5vw + 5px);
 
   &:after {
-    background: url(${IMAGES.homeBackground}) center center / cover no-repeat
-      fixed;
+    background: url(${IMAGES.HOME_BACKGROUND_URL}) center center / cover
+      no-repeat fixed;
     content: '';
     position: absolute;
     inset: 0px;

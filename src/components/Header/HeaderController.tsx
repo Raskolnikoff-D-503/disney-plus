@@ -10,7 +10,6 @@ import {
 } from '@/store/userLogin/userLogin.actions';
 import {
   selectUserName,
-  //   selectUserEmail,
   selectUserPhoto,
 } from '@/store/userLogin/userLogin.selectors';
 import {Header} from './Header';
@@ -21,7 +20,6 @@ export const HeaderController = () => {
 
   //Selectors
   const userName = useSelector(selectUserName);
-  //   const userEmail = useSelector(selectUserEmail);
   const userPhoto = useSelector(selectUserPhoto);
 
   //Handlers
@@ -56,7 +54,6 @@ export const HeaderController = () => {
   return (
     <Header
       userName={userName}
-      //   userEmail={userEmail}
       userPhoto={userPhoto}
       handleAuth={signInHandler}
       handleSignOut={signOutHandler}

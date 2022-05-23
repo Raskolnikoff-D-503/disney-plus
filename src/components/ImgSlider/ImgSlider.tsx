@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import {imgSliderData} from './imgSlider.map';
+import {imgSliderInfo} from './imgSliderInfo.map';
 
 export const ImgSlider = () => {
   const settings = {
@@ -17,11 +17,11 @@ export const ImgSlider = () => {
   return (
     <div>
       <Carousel {...settings}>
-        {imgSliderData.map((item) => {
+        {imgSliderInfo.map((item) => {
           return (
             <Wrap>
               <a>
-                <img src={item.imgSrc} alt={item.alt} />
+                <img src={item.imgUrl} alt={item.alt} />
               </a>
             </Wrap>
           );

@@ -1,32 +1,50 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {viewersInfo} from './viewersInfo.map';
+import {IMAGES} from '@/assets';
 
-export const Viewers = () => {
+export const Trending = () => {
   return (
     <Container>
-      {viewersInfo.map((item) => (
+      <h4>Trending</h4>
+      <Content>
         <Wrap>
-          <img src={item.imgUrl} alt="" />
-          <video autoPlay loop muted playsInline={true}>
-            <source src={item.videoUrl} type="video/mp4" />
-          </video>
+          <Link to="/">
+            <img src={IMAGES.SLIDER_SCALE_URL} alt="" />
+          </Link>
         </Wrap>
-      ))}
+        <Wrap>
+          <Link to="/">
+            <img src={IMAGES.SLIDER_SCALE_URL} alt="" />
+          </Link>
+        </Wrap>
+        <Wrap>
+          <Link to="/">
+            <img src={IMAGES.SLIDER_SCALE_URL} alt="" />
+          </Link>
+        </Wrap>
+        <Wrap>
+          <Link to="/">
+            <img src={IMAGES.SLIDER_SCALE_URL} alt="" />
+          </Link>
+        </Wrap>
+      </Content>
     </Container>
   );
 };
 
 const Container = styled.div`
-  margin-top: 30px;
-  padding: 30px 0px 26px;
+  padding: 0 0 26px;
+`;
+
+const Content = styled.div`
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 25px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  } ;
 `;
 
 const Wrap = styled.div`
@@ -50,26 +68,13 @@ const Wrap = styled.div`
     transition: opacity 500ms ease-in-out 0s;
     width: 100%;
     z-index: 1;
-  }
-
-  video {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    opacity: 0;
-    z-index: 0;
+    top: 0;
   }
 
   &:hover {
     box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
       rgb(0 0 0 / 72%) 0px 30px 22px -10px;
-
     transform: scale(1.05);
     border-color: rgba(249, 249, 249, 0.8);
-
-    video {
-      opacity: 1;
-    }
   }
 `;

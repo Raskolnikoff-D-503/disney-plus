@@ -1,14 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ImgSlider, Viewers} from '@/components';
+import {ImgSlider, Viewers, Recommends} from '@/components';
 
 import {IMAGES} from '@/assets';
+import {NewDisney} from '../NewDisney/NewDisney';
+import {Originals} from '../Originals/Originals';
+import {Trending} from '../Trending/Trending';
 
 export const Home = () => {
   return (
     <Container>
       <ImgSlider />
       <Viewers />
+      <Recommends />
+      <NewDisney />
+      <Originals />
+      <Trending />
     </Container>
   );
 };

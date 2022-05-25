@@ -19,7 +19,7 @@ export const ImgSlider = () => {
       <Carousel {...settings}>
         {imgSliderInfo.map((item) => {
           return (
-            <Wrap>
+            <Wrap key={item.imgUrl}>
               <a>
                 <img src={item.imgUrl} alt={item.alt} />
               </a>

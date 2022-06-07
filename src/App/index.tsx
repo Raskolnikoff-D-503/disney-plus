@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import {HeaderController, Login, HomeController} from '@/components';
+import {HeaderController, Login, HomeController, Detail} from '@/components';
 
 const App = () => {
   return (
@@ -10,6 +10,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<HomeController />} />
+          <Route path="/detail/:id" element={<Detail />} />
         </Routes>
       </Router>
     </div>

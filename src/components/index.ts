@@ -10,3 +10,4 @@ export * from './Recommends/Recommends';
 export * from './NewDisney/NewDisney';
 export * from './Originals/Originals';
 export * from './Trending/Trending';
+export * from './Detail/Detail';

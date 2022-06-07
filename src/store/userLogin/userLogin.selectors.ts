@@ -14,6 +14,7 @@ export const selectIsAuthenticated = (state: RootState) =>
  * @param state RootState
  * @returns имя пользователя
  */
+
 export const selectUserName = (state: RootState) => state.user.name;
 
 /**
@@ -21,6 +22,7 @@ export const selectUserName = (state: RootState) => state.user.name;
  * @param state RootState
  * @returns электронная почта пользователя
  */
+
 export const selectUserEmail = (state: RootState) => state.user.email;
 
 /**
@@ -28,4 +30,5 @@ export const selectUserEmail = (state: RootState) => state.user.email;
  * @param state RootState
  * @returns ссылка на фото пользователя
  */
+
 export const selectUserPhoto = (state: RootState) => state.user.photo;

@@ -9,10 +9,12 @@ import {Home} from './Home';
 export const HomeController = () => {
   const dispatch = useDispatch<AppDispatch>();
 
+  //Selectors
   const userName = useSelector(selectUserName);
   const recommends = useSelector(selectRecommend);
   console.log(recommends);
 
+  //Effects
   useEffect(() => {
     if (userName) {
       dispatch(getMovies());

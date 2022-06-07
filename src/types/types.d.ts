@@ -3,6 +3,9 @@ import {User} from 'firebase/auth';
 type Nullable<T> = T | null;
 
 export type UserLoginType = {
+  /**
+   * Статус авторизации
+   */
   isAuthenticated: boolean;
   /**
    * Имя пользователя
@@ -18,7 +21,7 @@ export type UserLoginType = {
   photo: string;
 };
 
-type MovieType = {
+export type MovieDto = {
   backgroundImg: string;
   cardImg: string;
   description: string;
@@ -27,6 +30,8 @@ type MovieType = {
   titleImg: string;
   type: string;
 };
+
+export type MovieType = MovieDto & {id: string};
 
 export type MovieCollectionType = {
   recommend: Nullable<MovieType[]>;

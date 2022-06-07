@@ -14,13 +14,14 @@ import {moviesSliceActions} from './movies.reducer';
 //   console.log(doc.id, " => ", doc.data());
 // });
 export const getMovies = () => {
-  let recommends: Array<{id: string}> = [];
-  let newDisneys: Array<{id: string}> = [];
-  let originals: Array<{id: string}> = [];
-  let trending: Array<{id: string}> = [];
   return (dispatch: AppDispatch) => {
     return getDocs(collection(db, 'movies'))
       .then((result) => {
+        let recommends: Array<{id: string}> = [];
+        let newDisneys: Array<{id: string}> = [];
+        let originals: Array<{id: string}> = [];
+        let trending: Array<{id: string}> = [];
+
         result.forEach((doc) => {
           switch (doc.data().type) {
             case 'recommend':
@@ -40,6 +41,7 @@ export const getMovies = () => {
             }
           }
         });
+
         dispatch(
           moviesSliceActions.setMovies({
             recommend: recommends,

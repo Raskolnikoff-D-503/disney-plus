@@ -4,6 +4,32 @@ import {AppDispatch} from '@/store/store';
 import {userLoginActions} from './userLogin.reducer';
 
 /**
+ * Экшн для отслеживания идентификатора пользователя
+ * @returns объект с данными пользователя
+ */
+
+export const setAuthState = () => {
+  return (dispatch: AppDispatch) => {
+    return auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        dispatch(
+          userLoginActions.setUserLoginDetails({
+            name: user.displayName,
+            email: user.email,
+            photo: user.photoURL,
+          }),
+        );
+      }
+      dispatch(
+        userLoginActions.setAuthenticationStatus({
+          isAuthenticated: Boolean(user),
+        }),
+      );
+    });
+  };
+};
+
+/**
  * Экшн на получение данных пользователя
  * @returns имя, электронная почта и ссылка на фото пользователя
  */

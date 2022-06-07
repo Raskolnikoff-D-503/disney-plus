@@ -6,7 +6,7 @@ export const Viewers = () => {
   return (
     <Container>
       {viewersInfo.map((item) => (
-        <Wrap>
+        <Wrap key={item.imgUrl}>
           <img src={item.imgUrl} alt="" />
           <video autoPlay loop muted playsInline={true}>
             <source src={item.videoUrl} type="video/mp4" />

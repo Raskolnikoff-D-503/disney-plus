@@ -1,6 +1,15 @@
 import {RootState} from '@/store/store';
 
 /**
+ * Селектор для получения статуса авторизации
+ * @param state RootState
+ * @returns значение boolean
+ */
+
+export const selectIsAuthenticated = (state: RootState) =>
+  state.user.isAuthenticated;
+
+/**
  * Селектор для получения имени пользователя
  * @param state RootState
  * @returns имя пользователя

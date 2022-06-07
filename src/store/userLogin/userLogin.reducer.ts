@@ -2,6 +2,7 @@ import {UserLoginType} from '@/types';
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState: UserLoginType = {
+  isAuthenticated: true,
   name: '',
   email: '',
   photo: '',
@@ -11,6 +12,9 @@ const userLoginSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    setAuthenticationStatus: (state, action) => {
+      state.isAuthenticated = action.payload.isAuthenticated;
+    },
     setUserLoginDetails: (state, action) => {
       state.name = action.payload.name;
       state.email = action.payload.email;

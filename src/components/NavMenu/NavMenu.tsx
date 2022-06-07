@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {navMenuInfo} from './navMenuInfo.map';
 
@@ -7,10 +8,10 @@ export const NavMenu = () => {
     <NavMenuList>
       {navMenuInfo.map((item) => {
         return (
-          <a key={item.title} href={item.path}>
+          <Link key={item.title} to={item.path}>
             <img src={item.imgUrl} alt={item.alt} />
             <span>{item.title}</span>
-          </a>
+          </Link>
         );
       })}
     </NavMenuList>

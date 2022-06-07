@@ -5,6 +5,7 @@ export * from './NavMenu/NavMenu';
 export * from './Home/HomeController';
 export * from './ImgSlider/ImgSlider';
 export * from './Viewers/Viewers';
+export * from './MoviesLayout/MoviesLayout';
 export * from './Recommends/Recommends';
 export * from './NewDisney/NewDisney';
 export * from './Originals/Originals';

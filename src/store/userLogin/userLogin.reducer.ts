@@ -1,5 +1,5 @@
-import {UserLoginType} from '@/types';
 import {createSlice} from '@reduxjs/toolkit';
+import {UserLoginType} from '@/types';
 
 const initialState: UserLoginType = {
   isAuthenticated: true,

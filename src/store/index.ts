@@ -1,7 +1,7 @@
 import {combineReducers} from '@reduxjs/toolkit';
-import {userLoginReducer} from './userLogin/userLogin.reducer';
-import {moviesSliceReducer} from './movies/movies.reducer';
-import {movieDetailsReducer} from './details/details.reducer';
+import {userLoginReducer} from './userLogin';
+import {moviesSliceReducer} from './movies';
+import {movieDetailsReducer} from './details';
 
 const reducers = {
   user: userLoginReducer,

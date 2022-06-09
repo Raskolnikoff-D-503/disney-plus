@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {MovieCollectionType} from '@/types/types';
+import {MovieCollectionType} from '@/types';
 
 const initialState: MovieCollectionType = {
   recommend: null,

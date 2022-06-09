@@ -1,14 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectRecommend} from '@/store/movies/movies.selectors';
+import {selectNewDisney} from '@/store/movies';
 import {MoviesLayout} from '@/components';
 
-export const Recommends = () => {
+export const NewDisney = () => {
   //Variables
-  const title = `Recommended for you`;
+  const title = `New to Disney+`;
 
   //Selectors
-  const movies = useSelector(selectRecommend);
+  const movies = useSelector(selectNewDisney);
 
   return <MoviesLayout title={title} data={movies} />;
 };

@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Nullable} from '@/types';
-import {NavMenu} from '@/components';
+import {NavMenu} from './HeaderElements';
 import {IMAGES} from '@/assets';
 
-type HeaderProps = {
+type HeaderLayoutProps = {
   userName: Nullable<string>;
   userPhoto: string;
   handleAuth: () => void;
   handleSignOut: () => void;
 };
 
-export const Header = ({
+export const HeaderLayout = ({
   userName,
   userPhoto,
   handleAuth,
   handleSignOut,
-}: HeaderProps) => {
+}: HeaderLayoutProps) => {
   return (
     <Nav>
       <Logo>

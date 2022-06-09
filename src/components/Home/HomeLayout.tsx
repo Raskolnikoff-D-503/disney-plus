@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ImgSlider, Viewers, Recommends} from '@/components';
-
+import {
+  ImgSlider,
+  Viewers,
+  Recommends,
+  NewDisney,
+  Originals,
+  Trending,
+} from './HomeElements';
 import {IMAGES} from '@/assets';
-import {NewDisney} from '../NewDisney/NewDisney';
-import {Originals} from '../Originals/Originals';
-import {Trending} from '../Trending/Trending';
 
-export const Home = () => {
+export const HomeLayout = () => {
   return (
     <Container>
       <ImgSlider />

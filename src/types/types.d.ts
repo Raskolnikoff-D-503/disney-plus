@@ -1,6 +1,8 @@
 import {User} from 'firebase/auth';
 
-type Nullable<T> = T | null;
+export type Nullable<T> = T | null;
+
+export type CollectionType = 'trending' | 'original' | 'recommend' | 'new';
 
 export type UserLoginType = {
   /**
@@ -22,13 +24,34 @@ export type UserLoginType = {
 };
 
 export type MovieDto = {
+  /**
+   * Ссылка на фоновую картинку
+   */
   backgroundImg: string;
+  /**
+   * Ссылка на картинку карточки
+   */
   cardImg: string;
+  /**
+   * Описание
+   */
   description: string;
+  /**
+   * Подзаголовок
+   */
   subTitle: string;
+  /**
+   * Заголовок
+   */
   title: string;
+  /**
+   * Ссылка на картинку заголовка
+   */
   titleImg: string;
-  type: string;
+  /**
+   * Тип фильма
+   */
+  type: CollectionType;
 };
 
 export type MovieType = MovieDto & {id: string};

@@ -1,14 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectNewDisney} from '@/store/movies/movies.selectors';
+import {selectOriginal} from '@/store/movies';
 import {MoviesLayout} from '@/components';
 
-export const NewDisney = () => {
+export const Originals = () => {
   //Variables
-  const title = `New to Disney+`;
+  const title = `Originals`;
 
   //Selectors
-  const movies = useSelector(selectNewDisney);
+  const movies = useSelector(selectOriginal);
 
   return <MoviesLayout title={title} data={movies} />;
 };

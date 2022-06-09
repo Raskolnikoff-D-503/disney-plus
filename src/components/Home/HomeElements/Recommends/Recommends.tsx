@@ -1,14 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {selectTrending} from '@/store/movies/movies.selectors';
+import {selectRecommend} from '@/store/movies';
 import {MoviesLayout} from '@/components';
 
-export const Trending = () => {
+export const Recommends = () => {
   //Variables
-  const title = `Originals`;
+  const title = `Recommended for you`;
 
   //Selectors
-  const movies = useSelector(selectTrending);
+  const movies = useSelector(selectRecommend);
 
   return <MoviesLayout title={title} data={movies} />;
 };

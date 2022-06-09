@@ -6,13 +6,11 @@ import {
   setAuthState,
   setSignOutState,
   setUserLoginDetails,
-} from '@/store/userLogin/userLogin.actions';
-import {
   selectIsAuthenticated,
   selectUserName,
   selectUserPhoto,
-} from '@/store/userLogin/userLogin.selectors';
-import {Header} from './Header';
+} from '@/store/userLogin';
+import {HeaderLayout} from './HeaderLayout';
 
 export const HeaderController = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -42,7 +40,7 @@ export const HeaderController = () => {
   }, [userName, isAuthenticated]);
 
   return (
-    <Header
+    <HeaderLayout
       userName={userName}
       userPhoto={userPhoto}
       handleAuth={signInHandler}

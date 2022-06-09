@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {MovieType, Nullable} from '@/types/types';
+import {MovieType, Nullable} from '@/types';
 
 type MoviesLayoutProps = {
   title: string;

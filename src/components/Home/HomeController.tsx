@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppDispatch} from '@/store/store';
-import {getMovies} from '@/store/movies/movies.actions';
-import {selectUserName} from '@/store/userLogin/userLogin.selectors';
-import {Home} from './Home';
+import {getMovies} from '@/store/movies';
+import {selectUserName} from '@/store/userLogin';
+import {HomeLayout} from './HomeLayout';
 
 export const HomeController = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -18,5 +18,5 @@ export const HomeController = () => {
     }
   }, [userName]);
 
-  return <Home />;
+  return <HomeLayout />;
 };

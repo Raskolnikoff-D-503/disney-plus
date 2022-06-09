@@ -3,7 +3,10 @@ import {collection, getDocs} from 'firebase/firestore';
 import {AppDispatch} from '../store';
 import {moviesSliceActions} from './movies.reducer';
 
-//TODO: попробовать вытаскивать отдельно
+/**
+ * Экшн для получения списка фильмов
+ * @returns Promise со списком фильмов по категориям
+ */
 
 export const getMovies = () => {
   return (dispatch: AppDispatch) => {

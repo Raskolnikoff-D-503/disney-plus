@@ -1,16 +1,38 @@
-import {IMAGES} from '@/assets';
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useParams} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
+import {AppDispatch} from '@/store/store';
+import {movieDetailsActions} from '@/store/details/details.reducer';
+import {getMovieDetailsbyId} from '@/store/details/details.actions';
+import {selectMovieDetailsById} from '@/store/details/detail.selectors';
+import {IMAGES} from '@/assets';
 
 export const Detail = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const {id} = useParams();
+
+  //Selectors
+  const detailData = useSelector(selectMovieDetailsById);
+
+  //Effects
+  useEffect(() => {
+    if (id) {
+      dispatch(getMovieDetailsbyId(id));
+    }
+    return () => {
+      dispatch(movieDetailsActions.clearMovieDetails());
+    };
+  }, [id]);
+
   return (
     <Container>
       <Background>
-        <img src="" alt="" />
+        <img src={detailData?.backgroundImg} alt={detailData?.title} />
       </Background>
 
       <ImageTitle>
-        <img src="" alt="" />
+        <img src={detailData?.titleImg} alt={detailData?.title} />
       </ImageTitle>
 
       <ContentMeta>
@@ -33,8 +55,8 @@ export const Detail = () => {
             </div>
           </GroupWatch>
         </Controls>
-        <SubTitle>SubTitle</SubTitle>
-        <Description>Description</Description>
+        <SubTitle>{detailData?.subTitle}</SubTitle>
+        <Description>{detailData?.description}</Description>
       </ContentMeta>
     </Container>
   );

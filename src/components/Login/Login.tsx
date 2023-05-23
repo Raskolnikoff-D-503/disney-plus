@@ -11,8 +11,8 @@ export const Login = () => {
           <SignUp>GET ALL THERE</SignUp>
           <Description>
             Get Premier Access to Raya and the Last Dragon for an additional fee
-            with a Disney+ subscription. As of the bloody date of 24/02/2022,
-            the price of Disney+ and The Disney Bundle will increase by $1.
+            with a Disney+ subscription. As of the date of 31/12/2022, the price
+            of Disney+ and The Disney Bundle will increase by $1.
           </Description>
           <CTALogoTwo src={IMAGES.CTA_LOGO_TWO_URL} alt="" />
         </CTA>

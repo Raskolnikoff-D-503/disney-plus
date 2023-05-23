@@ -3,8 +3,10 @@ import {getFirestore} from 'firebase/firestore';
 import {getAuth, GoogleAuthProvider} from 'firebase/auth';
 import {getStorage} from 'firebase/storage';
 
+const {REACT_APP_API_KEY} = process.env;
+
 const firebaseConfig = {
-  apiKey: 'AIzaSyBNtUOnUUqgrnzJXUMX3k9Fv6HCqY26BGk',
+  apiKey: REACT_APP_API_KEY,
   authDomain: 'disney-plus-app-e2845.firebaseapp.com',
   projectId: 'disney-plus-app-e2845',
   storageBucket: 'disney-plus-app-e2845.appspot.com',

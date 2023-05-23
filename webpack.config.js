@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const getFileLoaderOptions = () => ({
   name: `[path][name].[ext]`,
@@ -71,5 +72,6 @@ module.exports = {
     new HtmlWebpackPlugin({template: './src/index.html'}),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
+    new Dotenv(),
   ],
 };

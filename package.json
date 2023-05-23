@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --env"
+    "build": "webpack --env development"
   },
   "author": "",
   "license": "ISC",

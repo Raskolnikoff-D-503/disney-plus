@@ -6,7 +6,7 @@ import {getStorage} from 'firebase/storage';
 const {REACT_APP_API_KEY} = process.env;
 
 const firebaseConfig = {
-  apiKey: REACT_APP_API_KEY,
+  apiKey: `${REACT_APP_API_KEY}`,
   authDomain: 'disney-plus-app-e2845.firebaseapp.com',
   projectId: 'disney-plus-app-e2845',
   storageBucket: 'disney-plus-app-e2845.appspot.com',
